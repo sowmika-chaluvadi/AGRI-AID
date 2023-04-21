@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>Classification</title>
+    <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="static/assests/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/assests/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="static/assests/css/fontAwesome.css">
+        <link rel="stylesheet" href="static/assests/css/hero-slider.css">
+        <link rel="stylesheet" href="static/assests/css/owl-carousel.css">
+        <link rel="stylesheet" href="static/assests/css/datepicker.css">
+        <link rel="stylesheet" href="static/assests/css/tooplate-style.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+        <script src="static/assests/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+  </head>
+<body style="background-color: rgb(245, 245, 245); color: black">
+  <div class="wrap">
+    <header id="header">
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <button id="primary-nav-button" type="button">Menu</button>
+               
+                <nav id="primary-nav" class="dropdown cf">
+                    <ul class="dropdown menu">
+                        <li class='active'><a href="/index">Home</a></li>
+                        
+                        <li class='active'><a href="/crop">Crop Recommendation</a></li>
+
+                        
+                        <li><a href="/login">Signout</a></li>
+                    </ul>
+                </nav><!-- / #primary-nav -->
+
+                
+                <div style="margin-left: 85%;" id="google_translate_element"></div>
+               
+            </div>
+        </div>
+    </header>
+</div>
+<br>
+<div class="banner">
+    <div class="container-fluid">
+        <div class="col-md-5 col-sm-5 col-xs-12">
+            <div class="left-content">
+                <div class="inside-content">
+                    <h4> Crop Recommendation using Machine LEarning</h4>
+                   
+                </div>
+            </div>
+        </div>
+        
+       
+    </div>
+</div>
+
+<div
+id="maintext"
+style="
+  position: absolute;
+  margin: auto;
+  width: 700px;
+  height: 200px;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+"
+>
+            <form action="{{ url_for('predict') }}" method="post">
+                
+
+                <div class="box1-t">
+                    <h2 style="color: rgb(15, 15, 15);">NITROGEN</h2>
+                    <input type="text" class="N" name="N" placeholder="Enter values between 0-140" required = 'required' size="26">
+                    
+                </div>
+
+
+                <div class="box2-t">
+                    <h2 style="color: rgb(19, 18, 18);">PHOSPHORUS</h2>
+                
+                    <input type="text" class="N" name="P" required = 'required' placeholder="Enter values between 5-145" size="26">
+                    
+                </div>
+
+
+                <div class="box3-t">
+                    <h2 style="color: rgb(22, 21, 21);">POTASSIUM</h2>
+                
+                    <input type="text" class="N" name="K" required = 'required' placeholder="Enter values between 5-205" size="26">
+                    
+                </div>
+
+
+                <div class="box4-t">
+                    <h2 style="color: rgb(15, 15, 15);">TEMPERATURE</h2>
+                
+                    <input type="text" class="N" name="T" required = 'required' placeholder="Enter values between 8-44" size="26">
+                    
+                </div>
+
+                <div class="box5-t">
+                    <h2 style="color: rgb(14, 13, 13);">HUMIDITY</h2>
+                
+                    <input type="text" class="N" name="H" required = 'required' placeholder="Enter values between 14-99" size="26">
+                    
+                </div>
+
+                <div class="box6-t">
+                    <h2 style="color: rgb(17, 16, 16);">pH</h2>
+               
+                    <input type="text" class="N" name="P" required = 'required' placeholder="Enter values between 3-10" size="26">
+                    
+                </div>
+
+                <div class="box7-t">
+                    <h2 style="color: rgb(20, 20, 20);">RAINFALL</h2>
+                
+                    <input type="text" class="N" name="R" required = 'required' placeholder="Enter values between 20-295" size="26">
+                   
+                </div>
+
+                <div class="box7-t">
+                    <h2 style="color: rgb(20, 20, 20);">Season</h2>
+                
+                    <input type="text" class="N1" name="R1" required = 'required' placeholder="Enter values 0-Summer or 1-Winter" size="26">
+                   
+                </div>
+
+                <div class="box7-t">
+                    <label style="color: rgb(20, 20, 20);"><h2>Select Region:</h2></label>
+                        <select style="width: 200px;height: 45px;margin-left: 250px;" class="selectpicker form-control" id="company" name="1" required="1" onchange="load_car_models(this.id,'car_model')">
+
+                        {% for company in companies %}
+                            <option value="{{ company }}">{{ company }}</option>
+                        {% endfor %}
+                        </select>
+                </div>
+
+                <br> <br>
+                <button type="submit"  class="btn btn-primary btn-block btn-large" value="Submit">Submit</button>
+            </div>
+
+            </form>
+        </div>
+        
+                        
+<script>
+    function load_car_models(company_id,car_model_id)
+    {
+        var company=document.getElementById(company_id);
+        var car_model=document.getElementById(car_model_id);
+
+        car_model.value="";
+        car_model.innerHTML="";
+
+        {% for company in companies %}
+
+          if(company.value=="{{company}}")
+          {
+            {% for model in car_models %}
+
+              {% if company in model %}
+
+                  var newOption=document.createElement("option");
+                  newOption.value="{{ model }}";
+                  newOption.innerHTML="{{ model }}";
+                  car_model.options.add(newOption);
+
+              {% endif %}
+            {% endfor %}
+          }
+        {% endfor %}
+
+    }
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages : 'en,ta,te,bn,ml,fr,hi,kn,mr,pa'}, 'google_translate_element');
+    }
+    </script>
+    
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+      
+        <script src="static/assests/js/vendor/bootstrap.min.js"></script>
+        
+        <script src="static/assests/js/datepicker.js"></script>
+        <script src="static/assests/js/plugins.js"></script>
+        <script src="static/assests/js/main.js"></script>
+      
+      </body>
+      </html>

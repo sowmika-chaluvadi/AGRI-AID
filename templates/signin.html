@@ -1,0 +1,171 @@
+<html>
+    <head>
+        <title>
+            Login
+        </title>
+        <style>
+            body{
+  padding: 50px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F5F5F5;
+}
+/*Sign In Form*/
+.signin{
+  position: relative;
+  height: 700px;
+  width: 500px;
+  margin: auto;
+  box-shadow: 0px 30px 125px -5px #000;}
+/*Background Img*/
+.back-img{
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: url('https://www.omnihotels.com/-/media/images/hotels/nycber/destinations/nyc-aerial-skyline.jpg?h=660&la=en&w=1170')no-repeat   center center;
+background-size: cover;
+}
+.layer {
+    background-color: rgba(33,150,243,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.active{
+  padding-left: 25px;
+  color: #fff;
+}
+.nonactive {
+  color: rgba(255, 255, 255, 0.6);
+}
+.sign-in-text{
+  top: 175px;
+  position: absolute;
+  z-index: 1;
+}
+h2 {
+  padding-left: 15px;
+  font-size: 25px;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 300;
+}
+.point{
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  top: 235px;
+  padding-left: 50px;
+  font-size: 20px;
+}
+
+/*form-section*/
+.form-section{
+  padding: 70px 90px 70px 90px;
+}
+.keep-text{
+  font-size: 15px;
+  color: #BDBDBD;
+}
+.forgot-text{
+  font-size: 12px;
+  color: #BDBDBD;
+  text-align: right;
+}
+/*sign-in-btn*/
+.sign-in-btn{
+  width: 100%;
+  height: 75px;
+  position:absolute;
+  bottom:0;
+  border-radius: 0px;
+  background-color: rgba(63, 78, 191, 1);
+}
+.login-form{
+  margin: 8px 0;
+  padding: 16px 12px;
+  width: 350px;
+  outline-style: none;
+  border: none;
+  font-family: 'Raleway';
+  font-size: 12pt;
+  font-weight: 500;
+  border: none;
+  border: solid 4px rgb(235, 235, 235);
+ 
+}
+.button {
+		  background-color: #4CAF50; /* Green */
+		  border: none;
+		  color: white;
+		  padding: 15px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		}
+		.button2 {background-color: #008CBA;} /* Blue */
+
+        </style>
+    </head>
+    <body>
+      <div style="margin-left: 85%;" id="google_translate_element"></div>
+        <div class="signin">
+
+          <div class="back-img">
+            <div class="sign-in-text">
+              <h2 class="active">Sign In</h2>
+             
+            </div><!--/.sign-in-text-->
+            <div class="layer">
+            </div><!--/.layer-->
+            <p class="point">&#9650;</p>
+          </div><!--/.back-img-->
+          <div class="form-section">
+           
+            <form style="text-align: center;"  action="/signin" method="GET">
+              <!--Email-->
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <label class="mdl-textfield__label" for="sample3">Username:</label>
+                <input style="margin-left: 65px;" type="text" placeholder="username" name="user" required><br>
+              </div>
+              <br/>
+              <br/>
+              <!--Password-->
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <label class="mdl-textfield__label" for="sample3">Password:</label>
+                <input style="margin-left: 70px;" type="password" placeholder="password" name="password" required><br>
+              </div>
+              <br/>
+              <p class="forgot-text">Forgot Password ?</p>
+              <!--CheckBox-->
+              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+              <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
+              <span class="keep-text mdl-checkbox__label">Keep me Signed In</span>
+            </label>
+            <br>
+            <br>
+            <div class="submit-container">
+              <button type="submit" class="button button2">SIGN IN</button>
+        
+              <p style="font-size: smaller;">Already have an account? <a href="/logon">Sign Up</a></p>
+              </div>
+            </form>
+          </div><!--/.form-section-->
+          
+          <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages : 'en,ta,te,bn,ml,fr,hi,kn,mr,pa'}, 'google_translate_element');
+    }
+    </script>
+    
+          
+       </div><!--/.signin-->
+      </body>
+</html>
